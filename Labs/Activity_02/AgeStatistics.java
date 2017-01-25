@@ -1,6 +1,8 @@
 import java.util.Scanner;
 /**
-* displays someone’s name, age, and gender, along with calculations for age in minutes and centuries well as max heart rate based on age and gender.
+* displays someone’s name, age, and gender, along with calculations 
+* for age in minutes and centuries well as max heart rate based on 
+* age and gender.
 * 
 * @author Perry Bunn
 * @version 1/23/17
@@ -10,7 +12,7 @@ public class AgeStatistics {
    * 
    * 
    * 
-   * 
+   * @param args not used.
    */
    public static void main(String[] args) {
       Scanner userInput = new Scanner(System.in);
