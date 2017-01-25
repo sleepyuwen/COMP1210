@@ -22,11 +22,11 @@ public class FormulaCalculator {
       
       System.out.println("result = (2x - 7.4) (4y + 9.3) (6z -11.2) / xyz");
       System.out.print("\tEnter x: ");
-      x = userInput.nextInt();
+      x = userInput.nextDouble();
       System.out.print("\tEnter y: ");
-      y = userInput.nextInt();
+      y = userInput.nextDouble();
       System.out.print("\tEnter z: ");
-      z = userInput.nextInt();
+      z = userInput.nextDouble();
       if (x == 0 || y == 0 || z == 0) {
          result = 0.0;
       } else {
