@@ -9,7 +9,7 @@ public class FormulaCalculator {
    /**
    *
    *
-   *
+   *@param args not used.
    *
    */
    public static void main(String[] args) {
@@ -29,8 +29,10 @@ public class FormulaCalculator {
       z = userInput.nextDouble();
       if (x == 0 || y == 0 || z == 0) {
          result = 0.0;
-      } else {
-         result = (((2 * x - 7.4) * (4 * y + 9.3) * (6 * z -11.2)) / (x * y * z));
+      } 
+      else {
+         result = (((2 * x - 7.4) * (4 * y + 9.3) * (6 * z - 11.2)) 
+            / (x * y * z));
       }
       System.out.println(result);
       
