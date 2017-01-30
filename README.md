@@ -1,5 +1,5 @@
 ## Welcome to COMP 1210!
-##### This page will be your guide to hopefully surviving Java.
+### This page will be your guide to hopefully surviving Java.
 
 All the notes taken and in the site assume you already have some programming knowledge and some experence with Java.
 pdfs are also available from my class aswell as the notes that I took in Markdown.
