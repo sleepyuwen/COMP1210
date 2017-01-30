@@ -33,7 +33,5 @@ public class FormulaCalculator {
          result = (((2 * x - 7.4) * (4 * y + 9.3) * (6 * z -11.2)) / (x * y * z));
       }
       System.out.println(result);
-      
-      
    }
 }
