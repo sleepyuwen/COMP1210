@@ -35,7 +35,5 @@ public class FormulaCalculator {
             / (x * y * z));
       }
       System.out.println(result);
-      
-      
    }
 }
