@@ -8,9 +8,9 @@ import java.util.Scanner;
 public class MessageConverter {
    /**
    * 
-   *
+   * @param args not used.
    */
-   public static void main(String[] args){
+   public static void main(String[] args) {
       Scanner userInput = new Scanner(System.in);
       String message = "";
       int outputType;
@@ -38,11 +38,11 @@ public class MessageConverter {
       } else if (outputType == 3) { // upper case
          result = message.toUpperCase();
       } else if (outputType == 4) { // replace vowels
-         result = message.replace('a','_');
-         result = result.replace('e','_');
-         result = result.replace('i','_');
-         result = result.replace('o','_');
-         result = result.replace('u','_');
+         result = message.replace('a', '_');
+         result = result.replace('e', '_');
+         result = result.replace('i', '_');
+         result = result.replace('o', '_');
+         result = result.replace('u', '_');
       } else if (outputType == 5) { // without first and last character
          result = message.substring(1, message.length() - 1);
       } else { // invalid input
