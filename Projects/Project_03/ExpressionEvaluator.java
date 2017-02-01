@@ -28,8 +28,10 @@ public class ExpressionEvaluator {
       
       
       
-      System.out.println("# digits to the left of the decimal point: " + numbersLeft);
-      System.out.println("# digits to the right of the decimal point: " + numbersRight);
+      System.out.println("# digits to the left of the decimal point: " 
+         + numbersLeft);
+      System.out.println("# digits to the right of the decimal point: " 
+         + numbersRight);
       System.out.println("Formatted Result: " + formatted);
    }
 }
