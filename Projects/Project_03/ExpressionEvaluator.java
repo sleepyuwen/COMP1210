@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 /**
 * 
 *
@@ -14,9 +15,9 @@ public class ExpressionEvaluator {
    public static void main(String[] args) {
       double x;
       double result;
+      double index;
       String numbersLeft;
       String numbersRight;
-      String formatted;
       Scanner userInput = new Scanner(System.in);
       
       System.out.print("Enter a value for x: ");
@@ -26,12 +27,15 @@ public class ExpressionEvaluator {
          / (Math.sqrt(Math.abs(16 * Math.pow(x, 7))) + 1);
       System.out.println("Result: " + result);
       
+      numbersLeft = Double.toString(result)
+      numberLeft = numbersLeft.indexOf('.');
       
+      DecimalFormat fmt1 = new DecimalFormat("##,##0.0####");
       
       System.out.println("# digits to the left of the decimal point: " 
          + numbersLeft);
       System.out.println("# digits to the right of the decimal point: " 
          + numbersRight);
-      System.out.println("Formatted Result: " + formatted);
+      System.out.println("Formatted Result: " + fmt1.format(result));
    }
 }
