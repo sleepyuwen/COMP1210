@@ -31,15 +31,15 @@ public class Dodecahedron {
    }
    /**
    * @param labelIn takes the labelIn for the method.
-   * @return returns the value of the variable.
+   * @return returns the boolean if the variable was set.
    */
-   public String setlabel(String labelIn) {
+   public boolean setlabel(String labelIn) {
       if (labelIn != null) {
          label = labelIn.trim();
+         return true;
       } else {
-         return label;
+         return false;
       }
-      return label;
    }
    /**
    * @return returns the variable color.
@@ -49,15 +49,15 @@ public class Dodecahedron {
    }
    /**
    * @param colorIn takes the colorIn and sets it as the color variable.
-   * @return returns the value for color.
+   * @return returns the boolean if the variable was set.
    */
-   public String setColor(String colorIn) {
+   public boolean setColor(String colorIn) {
       if (color != null) {
          color = colorIn.trim();
+         return true;
       } else {
-         return color;
+         return false;
       }
-      return color;
    }
    /**
    * @return returns the value for the variable edge.
@@ -67,7 +67,7 @@ public class Dodecahedron {
    }
    /**
    * @param edgeIn takes the edgein and sets it as the edge variable.
-   * @return returns the value for edge.
+   * @return returns the boolean if the variable was set.
    */
    public boolean setEdge(double edgeIn) {
       if (edgeIn > 0) {
