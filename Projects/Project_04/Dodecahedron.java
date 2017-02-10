@@ -24,6 +24,7 @@ public class Dodecahedron {
       } else {
          return label;
       }
+      return label;
    }
    public String getColor() {
       return color;
@@ -34,16 +35,29 @@ public class Dodecahedron {
       } else {
          return color;
       }
+      return color;
    }
    public double getEdge() {
       return edge;
    }
-   public double setEdge(double edgeIn) {
+   public boolean setEdge(double edgeIn) {
       if(edge > 0) {
          edge = edgeIn;
          return true;
       } else {
          return false;
       }
+   }
+   public void surfaceArea() {
+      double surfaceArea = 3 * Math.sqrt(25 + 10 * Math.sqrt(5)) * Math.pow(edge, 2);
+   }
+   public void volume() {
+      double volume = ((15 + 7 * Math.sqrt(5)) / (4)) * Math.pow(edge, 3);
+   }
+   public void surfaceAreaToVolumeRatio() {
+      double ratio = surfaceArea / volume;
+   }
+   public String toString() {
+      
    }
 }
