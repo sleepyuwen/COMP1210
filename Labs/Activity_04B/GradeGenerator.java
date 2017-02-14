@@ -51,11 +51,13 @@ public class GradeGenerator {
    	*/
    	
    	// set the lab averages for activity and quiz
-      
+      comp1210Grade.setLabAverages(actvAvg, quizAvg);
       // set the project average 
-   	
+   	comp1210Grade.setProjectAvg(projAvg);
    	// set exam scores
-      
+      comp1210Grade.setExamScore(Grade.EXAM_1, exam1Score);
+      comp1210Grade.setExamScore(Grade.EXAM_2, exam2Score);
+      comp1210Grade.setExamScore(Grade.FINAL, finalExamScore);
       // calculate COMP 1210 grade
       double courseAvg = comp1210Grade.calculateGrade();
    	// print out COMP 1210   
