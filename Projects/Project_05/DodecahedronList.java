@@ -5,8 +5,8 @@ public class DodecahedronList {
    private String label = "";
    ArrayList<DodecahedronObjects> dodObjList = new ArrayList<DodecahedronObjects>();
    
-   public DodecahedronList(ArrayList<DodecahedronObjects>) {
-            
+   public DodecahedronList(ArrayList<Dodecahedron>) {
+      
    }
    
    public void getName() {
