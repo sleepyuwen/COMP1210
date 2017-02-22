@@ -2,34 +2,29 @@ import java.util.ArrayList;
 /**
 */
 public class DodecahedronList {
-   private String label = "";
-   ArrayList<DodecahedronObjects> dodObjList = new ArrayList<DodecahedronObjects>();
+   private String label;
+   ArrayList<DodecahedronList> dodObjList;
    
-   public DodecahedronList(ArrayList<Dodecahedron>) {
-      
+   public DodecahedronList(String labelIn, ArrayList<DodecahedronList> dodObjIn) {
+      label = labelIn;
+      dodObjList = dodObjIn;
    }
    
-   public void getName() {
+   public String getName() {
       return label;
    }
    
    public int numberOfDodecahedrons() {
-      if (dodobjList.size() != 0) {
-         return dodobjList.size();
-      } else {
-         return 0;
-      }
+      return dodObjList.size();
    }
    
    public double totalSurfaceArea() {
+      double total = 0;
       int index = 0;
-      if (dodobjList.size() != 0) {
-         while (index < dodobjList.size()) {
-            Dodecahedron.surfaceArea(dodobjList.get(index));
+         while (index < dodObjList.size()) {
+            total += dodObjList.get(index).surfaceArea();
             index++;
-         } 
-      } else {
-         return 0;
-      } 
+         }
+       return total;
    }
 }
