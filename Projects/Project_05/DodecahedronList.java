@@ -22,6 +22,8 @@ public class DodecahedronList {
       double total = 0;
       int index = 0;
          while (index < dodObjList.size()) {
+            // "try and separate the objects and then find the surfaceArea of that new object" - TA
+            // wont compile as is
             total += dodObjList.get(index).surfaceArea();
             index++;
          }
