@@ -1,17 +1,18 @@
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 /**
 */
 public class DodecahedronList {
-   private String label;
+   private String listName;
    ArrayList<Dodecahedron> dodObjList;
    
-   public DodecahedronList(String labelIn, ArrayList<Dodecahedron> dodObjIn) {
-      label = labelIn;
+   public DodecahedronList(String listNameIn, ArrayList<Dodecahedron> dodObjIn) {
+      listName = listNameIn;
       dodObjList = dodObjIn;
    }
    
    public String getName() {
-      return label;
+      return listName;
    }
    
    public int numberOfDodecahedrons() {
@@ -63,6 +64,23 @@ public class DodecahedronList {
    }
    
    public String toString() {
-      return ;
+      String finalString = "";
+      int index = 0;
+      while (index < dodObjList.size()) {
+         finalString = dodObjList.toString();
+         index++;
+      }
+      return finalString;
+   }
+   // prints the number of Dodecahedrons, total surface area, total volume, average surface area, 
+   // average volume, and average surface to volume ratio
+   public String summaryInfo() {
+      return "----- Summary for " + listName + " -----\n" +
+            "Number of Dodecahedrons: " + dodObjList.size() + "\n" +
+            "Total Surface Area: " + totalSurfaceArea() + "\n" +
+            "Total Volume: " + totalVolume() + "\n" +
+            "Average Surface Area: " + averageSurfaceArea() + "\n" +
+            "Average Volume: " + averageVolume() + "\n" + 
+            "Average Surface/Volume Ratio: " + averageSurfaceAreatoVolumeRatio();
    }
 }
