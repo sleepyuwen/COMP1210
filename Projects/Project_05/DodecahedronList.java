@@ -22,8 +22,6 @@ public class DodecahedronList {
       double total = 0;
       int index = 0;
       while (index < dodObjList.size()) {
-            // "try and separate the objects and then find the surfaceArea of that new object" - TA
-            // wont compile as is
          total += dodObjList.get(index).surfaceArea();
          index++;
       }
@@ -44,9 +42,27 @@ public class DodecahedronList {
       double total = 0;
       int index = 0;
       while (index < dodObjList.size()) {
-         total += ;
+         total += (dodObjList.get(index).surfaceArea())/dodObjList.size();
          index++;
       }
       return total;
+   }
+   
+   public double averageVolume() {
+      double total = 0;
+      int index = 0;
+      while (index < dodObjList.size()) {
+         total += (dodObjList.get(index).volume())/dodObjList.size();
+         index++;
+      }
+      return total;
+   }
+   
+   public double averageSurfaceAreatoVolumeRatio() {
+      return averageSurfaceArea()/averageVolume();
+   }
+   
+   public String toString() {
+      return ;
    }
 }
