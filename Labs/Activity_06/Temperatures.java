@@ -2,25 +2,31 @@ import java.util.ArrayList;
 /**
 */
 public class Temperatures {
-   ArrayList<Integer> temperatures;
-   
+   private ArrayList<Integer> temperatures;
+   /**
+   @param temperaturesIn 
+   */
    public Temperatures(ArrayList<Integer> temperaturesIn) {
       temperatures = temperaturesIn;
    }
-   
+   /**
+   @return returns the value of the lowest temp
+   */
    public int getLowTemp() {
-      if(temperatures.isEmpty()) {
+      if (temperatures.isEmpty()) {
          return 0;
       }
       int low = temperatures.get(0);
       for (int i = 0; i < temperatures.size(); i++) {
-         if ( temperatures.get(i) < low) {
+         if (temperatures.get(i) < low) {
             low = temperatures.get(i);
          }
       }
       return low;
    }
-   
+   /**
+   @return returns the highest temp
+   */
    public int getHighTemp() {
       if (temperatures.isEmpty()) {
          return 0;
@@ -33,15 +39,23 @@ public class Temperatures {
       }
       return high;
    }
-   
+   /**
+   @return returns the lowest temp
+   @param lowIn input for a temp
+   */
    public int lowerMinimum(int lowIn) {
       return lowIn < getLowTemp() ? lowIn : getLowTemp();
    }
-   
+   /**
+   @return returns the highest temp
+   @param highIn input for a temp
+   */
    public int higherMaximum(int highIn) {
       return highIn > getHighTemp() ? highIn : getHighTemp();
    }
-   
+   /**
+   @return returns the above methods in readable format
+   */
    public String toString() {
       return "\tTempaturs: " + temperatures
             + "\n\tLow: " + getLowTemp()

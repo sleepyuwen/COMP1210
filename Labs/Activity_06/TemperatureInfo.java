@@ -3,16 +3,18 @@ import java.util.ArrayList;
 /**
 */
 public class TemperatureInfo {
-   
-   public void main(String[] args) {
+   /**
+   @param args comandline args not used
+   */
+   public static void main(String[] args) {
       Scanner userInput = new Scanner(System.in);
       ArrayList<Integer> tempList = new ArrayList<Integer>();
       
       String tempInput = "";
       do {
-         System.out.print("Enter a tempature (or nothing to end list): ");
+         System.out.print("Enter a temperature (or nothing to end list): ");
          tempInput = userInput.nextLine().trim();
-         if (!tempInput.equals("")); {
+         if (!tempInput.equals("")) {
             tempList.add(Integer.parseInt(tempInput));
          }
       } while (!tempInput.equals(""));
@@ -21,7 +23,8 @@ public class TemperatureInfo {
       
       char choice = 'E';
       do {
-         System.out.print("Enter choice = [L]ow temp, [H]igh temp, [P]rint, [E]nd: ");
+         System.out.print("Enter choice = [L]ow temp, [H]igh temp, "
+                        + "[P]rint, [E]nd: ");
          choice = userInput.nextLine().toUpperCase().charAt(0);
          switch (choice) {
             case 'L':
@@ -41,7 +44,7 @@ public class TemperatureInfo {
                break;
                
             default:
-               System.out.println("\tinvalid choice!");
+               System.out.println("\tInvalid choice!");
          }
       } while (choice != 'E');
    }
