@@ -58,29 +58,35 @@ public class DodecahedronList {
       }
       return total;
    }
-   
+   // math is wrong needs to be fixed!
    public double averageSurfaceAreatoVolumeRatio() {
-      return averageSurfaceArea()/averageVolume();
+      double total = 0;
+      int index = 0;
+      while (index < dodObjList.size()) {
+         total += dodObjList.get(index).surfaceToVolumeRatio()/dodObjList.size();
+         index++;
+      }
+      return total;
    }
    
    public String toString() {
       String finalString = "";
       int index = 0;
       while (index < dodObjList.size()) {
-         finalString = dodObjList.toString();
+         finalString = "\n" + dodObjList.toString() + "\n";
          index++;
       }
-      return listName + "\n\n" + finalString + "\n";
+      return "\n" + listName + "\n" + finalString;
    }
-   // prints the number of Dodecahedrons, total surface area, total volume, average surface area, 
-   // average volume, and average surface to volume ratio
+   
    public String summaryInfo() {
+      DecimalFormat fmt = new DecimalFormat("#,##0.0##");
       return "----- Summary for " + listName + " -----\n" +
             "Number of Dodecahedrons: " + dodObjList.size() + "\n" +
-            "Total Surface Area: " + totalSurfaceArea() + "\n" +
-            "Total Volume: " + totalVolume() + "\n" +
-            "Average Surface Area: " + averageSurfaceArea() + "\n" +
-            "Average Volume: " + averageVolume() + "\n" + 
-            "Average Surface/Volume Ratio: " + averageSurfaceAreatoVolumeRatio();
+            "Total Surface Area: " + fmt.format(totalSurfaceArea()) + "\n" +
+            "Total Volume: " + fmt.format(totalVolume()) + "\n" +
+            "Average Surface Area: " + fmt.format(averageSurfaceArea()) + "\n" +
+            "Average Volume: " + fmt.format(averageVolume()) + "\n" + 
+            "Average Surface/Volume Ratio: " + fmt.format(averageSurfaceAreatoVolumeRatio());
    }
 }
