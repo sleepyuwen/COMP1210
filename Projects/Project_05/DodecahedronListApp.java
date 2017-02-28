@@ -3,9 +3,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 /**
+@author perry bunn
+@version 2/27/17
 */
 public class DodecahedronListApp {
    /**
+   @param args comandline args not used
+   @throws IOException idk  what this does i was told to put it...
    */
    public static void main(String[] args) throws IOException {
       ArrayList<Dodecahedron> dodObjList = new ArrayList<Dodecahedron>();
