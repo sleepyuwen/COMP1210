@@ -8,6 +8,7 @@ public class DodecahedronListApp {
    /**
    */
    public static void main(String[] args) throws IOException {
+      ArrayList<Dodecahedron> dodObjList = new ArrayList<Dodecahedron>();
       String listName = "";
       String label = "";
       String color = "";
@@ -26,11 +27,12 @@ public class DodecahedronListApp {
          edge = Double.parseDouble(scanFile.nextLine());
          
          Dodecahedron dodObj = new Dodecahedron(label, color, edge);
+         dodObjList.add(dodObj);
       }
       // #iHaveNoIdeaWhatImDoing
-      Dodecahedron myList = new DodecahedronList(listName, dodObj);
+      DodecahedronList myList = new DodecahedronList(listName, dodObjList);
       
-      System.out.println(toString());
-      System.out.println(summaryInfo());
+      System.out.println(myList.toString());
+      System.out.println(myList.summaryInfo());
    }
 }

@@ -6,9 +6,9 @@ public class DodecahedronList {
    private String listName;
    ArrayList<Dodecahedron> dodObjList;
    
-   public DodecahedronList(String listNameIn, ArrayList<Dodecahedron> dodObjIn) {
+   public DodecahedronList(String listNameIn, ArrayList<Dodecahedron> dodObjListIn) {
       listName = listNameIn;
-      dodObjList = dodObjIn;
+      dodObjList = dodObjListIn;
    }
    
    public String getName() {
@@ -70,7 +70,7 @@ public class DodecahedronList {
          finalString = dodObjList.toString();
          index++;
       }
-      return finalString;
+      return listName + "\n\n" + finalString + "\n";
    }
    // prints the number of Dodecahedrons, total surface area, total volume, average surface area, 
    // average volume, and average surface to volume ratio
