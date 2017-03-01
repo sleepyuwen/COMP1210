@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 /**
+@author perry bunn
+@version 2/27/17
 */
 public class TemperatureInfo {
    /**

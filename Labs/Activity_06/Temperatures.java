@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 /**
+@author perry bunn
+@version 2/27/17
 */
 public class Temperatures {
    private ArrayList<Integer> temperatures;
