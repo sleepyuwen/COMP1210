@@ -125,23 +125,76 @@ public class DodecahedronList {
       return dodObjList;
    }
    
-   public String readFile(String fileNameIn) {
+   public DodecahedronList readFile(String fileNameIn) throws IOException {
+      Scanner scanFile = new Scanner(new File(fileNameIn));
+      ArrayList<Dodecahedron> dodObjList = new ArrayList<Dodecahedron>();
+      String dodObjListName = "";
+      String label = "";
+      String color = "";
+      double edge = 0;
       
+      dodObjListName = scanFile.nextLine();
+      while (scanFile.hasNext()) {
+         label = scanFile.nextLine();
+         color = scanFile.nextLine();
+         edge = Double.parseDouble(scanFile.nextLine());
+         
+         Dodecahedron dodObj = new Dodecahedron(label, color, edge);
+         dodObjList.add(dodObj);
+      }
+      
+      DodecahedronList dodList = new DodecahedronList(dodObjListName, dodObjList);
+      return dodList;
    }
    
    public void addDodecahedron(String labelIn, String colorIn, double edgeIn) {
+      Dodecahedron dodObj = new Dodecahedron(labelIn, colorIn, edgeIn);
+      dodObjList.add(dodObj);
+   }
+   
+   public Dodecahedron findDodecahedron(String labelIn) {
+      int index = -1;
+      for (Dodecahedron dodObj : dodObjList) {
+         if (dodObj.getLabel() == labelIn) {
+            index = dodObjList.indexOf(dodObj);
+            break;
+         }
+      }
       
+      if (index >= 0) {
+         return dodObjList.get(index);
+      } else {
+         return null;
+      }
    }
    
-   public void findDodecahedron(String labelIn) {
-   
-   }
-   
-   public String deleteDodecahedron(String labelIn) {
-   
+   public Dodecahedron deleteDodecahedron(String labelIn) {
+      int index = -1;
+      for (Dodecahedron dodObj : dodObjList) {
+         if (dodObj.getLabel() == labelIn) {
+            index = dodObjList.indexOf(dodObj);
+            break;
+         }
+      }
+      
+      if (index >= 0) {
+         dodObjList.remove(index);
+         return dodObjList.get(index);
+      } else {
+         return null;
+      }
    }
    
    public boolean editDodecahedron(String labelIn, String colorIn, double edgeIn) {
-   
+      boolean result = false;
+      for (Dodecahedron dodObj : dodObjList) {
+         if (dodObj.getLabel() == labelIn) {
+            dodObj.setColor(colorIn);
+            dodObj.setEdge(edgeIn);
+            result = true;
+            break;
+         }
+      }
+      return result;
    }
 }
