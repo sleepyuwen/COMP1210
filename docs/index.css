@@ -36,10 +36,6 @@ a:hover {
     color: #e54848;
 }
 
-a:visited {
-    color: dimgray;
-}
-
 .imageSize {
     max-width: 25vh;
 }
