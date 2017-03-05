@@ -8,9 +8,11 @@ body {
     font-size: 1.3vw;
     color: black;
 }
+
 .code {
     font-family: 'Source Code Pro', monospace;
 }
+
 .center {
     text-align: center;
     align-content: center;
@@ -27,15 +29,13 @@ h3 {
 }
 
 a {
-    color: dimgray;
+    color: #696969;
 }
+
 a:hover {
     color: #e54848;
 }
-a:visited {
-    color: dimgray;
-}
 
 .imageSize {
-    max-width: 7vw;
+    max-width: 25vh;
 }
