@@ -72,9 +72,8 @@ public class DodecahedronListMenuApp {
                System.out.print("\tLabel: ");
                label = scanInput.nextLine();
                
-               dodObjList.deleteDodecahedron(label);
-               
                if (dodObjList.deleteDodecahedron(label) != null) {
+                  dodObjList.deleteDodecahedron(label);
                   System.out.println("\t\"" + label + "\" deleted\n");
                } else {
                   System.out.println("\t\"" + label + "\" not found\n");
@@ -86,7 +85,7 @@ public class DodecahedronListMenuApp {
                label = scanInput.nextLine();
                
                if (dodObjList.findDodecahedron(label) != null) {
-                  System.out.println(dodObjList.toString());
+                  System.out.println(dodObjList.findDodecahedron(label).toString() + "/n");
                } else {
                   System.out.println("\t\"" + label + "\" not found\n");
                }
@@ -100,9 +99,8 @@ public class DodecahedronListMenuApp {
                System.out.print("\tEdge: ");
                edge = Double.parseDouble(scanInput.nextLine());
                
-               dodObjList.editDodecahedron(label, color, edge);
-               
-               if ( = true) {
+               if (dodObjList.findDodecahedron(label) != null) {
+                  dodObjList.editDodecahedron(label, color, edge);
                   System.out.println("\"" + label + "\" successfully edited");
                } else {
                   System.out.println("\"" + label + "\" not found");

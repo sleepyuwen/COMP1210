@@ -154,7 +154,7 @@ public class DodecahedronList {
    
    public Dodecahedron findDodecahedron(String labelIn) {
       for (Dodecahedron dodObj : dodObjList) {
-         if (dodObj.getLabel().equals(labelIn)) {
+         if (dodObj.getLabel().equalsIgnoreCase(labelIn)) {
             return dodObj;
          }
       }
