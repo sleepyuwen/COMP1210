@@ -169,13 +169,7 @@ public class DodecahedronList {
    }
    
    public Dodecahedron deleteDodecahedron(String labelIn) {
-      int index = -1;
-      for (Dodecahedron dodObj : dodObjList) {
-         if (dodObj.getLabel() == labelIn) {
-            index = dodObjList.indexOf(dodObj);
-            break;
-         }
-      }
+      int index = dodObjList.indexOf(dodObjList.findDodecahedron(labelIn));
       
       if (index >= 0) {
          dodObjList.remove(index);
