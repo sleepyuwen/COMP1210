@@ -19,7 +19,15 @@ public class DodecahedronListMenuApp {
       String userInput = "";
       Scanner scanInput = new Scanner(System.in);
       
-      
+      System.out.println("Dodecahedron List System Menu\n"
+                       + "R - Read File and Create Dodecahedron List\n"
+                       + "P - Print Dodecahedron List\n" 
+                       + "S - Print Summary\n"
+                       + "A - Add Dodecahedron Object\n"   
+                       + "D - Delete Triangle Object\n"   
+                       + "F - Find Dodecahedron\n"
+                       + "E - Edit Dodecahedron\n"
+                       + "Q - Quit");
       
       do {
          System.out.print("Enter Code [R, P, S, A, D, F, E, or Q]: ");
