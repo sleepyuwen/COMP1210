@@ -99,7 +99,7 @@ public class DodecahedronList {
       String finalString = "";
       int index = 0;
       while (index < dodObjList.size()) {
-         finalString = "\n" + dodObjList.toString() + "\n";
+         finalString = "\n" + dodObjList.get(index).toString() + "\n";
          index++;
       }
       return "\n" + listName + "\n" + finalString;
@@ -153,23 +153,16 @@ public class DodecahedronList {
    }
    
    public Dodecahedron findDodecahedron(String labelIn) {
-      int index = -1;
       for (Dodecahedron dodObj : dodObjList) {
-         if (dodObj.getLabel() == labelIn) {
-            index = dodObjList.indexOf(dodObj);
-            break;
+         if (dodObj.getLabel().equals(labelIn)) {
+            return dodObj;
          }
       }
-      
-      if (index >= 0) {
-         return dodObjList.get(index);
-      } else {
-         return null;
-      }
+      return null;
    }
    
    public Dodecahedron deleteDodecahedron(String labelIn) {
-      int index = dodObjList.indexOf(dodObjList.findDodecahedron(labelIn));
+      int index = dodObjList.indexOf(findDodecahedron(labelIn));
       
       if (index >= 0) {
          dodObjList.remove(index);
@@ -182,7 +175,7 @@ public class DodecahedronList {
    public boolean editDodecahedron(String labelIn, String colorIn, double edgeIn) {
       boolean result = false;
       for (Dodecahedron dodObj : dodObjList) {
-         if (dodObj.getLabel() == labelIn) {
+         if (dodObj.getLabel().equals(labelIn)) {
             dodObj.setColor(colorIn);
             dodObj.setEdge(edgeIn);
             result = true;

@@ -19,7 +19,11 @@ public class DodecahedronListMenuApp {
       String userInput = "";
       Scanner scanInput = new Scanner(System.in);
       
+      
+      
       do {
+         System.out.print("Enter Code [R, P, S, A, D, F, E, or Q]: ");
+         
          String label = "";
          String color = "";
          double edge = 0;
@@ -32,13 +36,14 @@ public class DodecahedronListMenuApp {
          userInput = userInput.toUpperCase();
          char userChar = userInput.charAt(0);
          
+         
          switch (userChar) {
             case 'R':
-               System.out.print("File name: ");
+               System.out.print("\tFile name: ");
                fileName = scanInput.nextLine();
                
                dodObjList = dodObjList.readFile(fileName);
-               System.out.print("File read in and Dodecahedron List created");
+               System.out.println("\tFile read in and Dodecahedron List created\n");
                
                break;
                
@@ -47,41 +52,58 @@ public class DodecahedronListMenuApp {
                break;
                
             case 'S':
-               System.out.println(dodObjList.summaryInfo());
+               System.out.println("\n" + dodObjList.summaryInfo() + "\n");
                break;
                
             case 'A':
-               System.out.print("Label: ");
+               System.out.print("\tLabel: ");
                label = scanInput.nextLine();
-               System.out.print("Color: ");
+               System.out.print("\tColor: ");
                color = scanInput.nextLine();
-               System.out.print("Edge: ");
+               System.out.print("\tEdge: ");
                edge = Double.parseDouble(scanInput.nextLine());
                
                dodObjList.addDodecahedron(label, color, edge);
                
-               System.out.print("*** Dodecahedron added ***");
+               System.out.println("\t*** Dodecahedron added ***\n");
                break;
                
             case 'D':
-               System.out.print("Label: ");
+               System.out.print("\tLabel: ");
                label = scanInput.nextLine();
                
                dodObjList.deleteDodecahedron(label);
                
                if (dodObjList.deleteDodecahedron(label) != null) {
-                  System.out.println("\"" + label + "\" deleted");
+                  System.out.println("\t\"" + label + "\" deleted\n");
                } else {
-                  System.out.println("\"" + label + "\" not found");
+                  System.out.println("\t\"" + label + "\" not found\n");
                }
                break;
                
             case 'F':
-               System.out.print("Label: ");
+               System.out.print("\tLabel: ");
                label = scanInput.nextLine();
-               dodObjList.findDodecahedron(label);
-               if (index != null) {
-                  dodObjList.get(index).toString();
+               
+               if (dodObjList.findDodecahedron(label) != null) {
+                  System.out.println(dodObjList.toString());
+               } else {
+                  System.out.println("\t\"" + label + "\" not found\n");
+               }
+               break;
+            
+            case 'E':
+               System.out.print("\tLabel: ");
+               label = scanInput.nextLine();
+               System.out.print("\tColor: ");
+               color = scanInput.nextLine();
+               System.out.print("\tEdge: ");
+               edge = Double.parseDouble(scanInput.nextLine());
+               
+               dodObjList.editDodecahedron(label, color, edge);
+               
+               if ( = true) {
+                  System.out.println("\"" + label + "\" successfully edited");
                } else {
                   System.out.println("\"" + label + "\" not found");
                }
